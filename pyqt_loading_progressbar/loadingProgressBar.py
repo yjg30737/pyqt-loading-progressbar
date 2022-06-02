@@ -28,3 +28,17 @@ class LoadingProgressBar(QProgressBar):
             self.__animation.setDirection(QAbstractAnimation.Forward)
             self.setInvertedAppearance(False)
             self.__animation.start()
+
+    def setAnimationType(self, type: str):
+        if type == 'fade':
+            self.setStyleSheet('''
+                QProgressBar::chunk {
+                    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 transparent, stop: 0.5 #CCCCCC, stop: 0.6 #CCCCCC, stop:1 transparent);
+                }
+            ''')
+            self.__animation.setEasingCurve(QEasingCurve.Linear)
+            self.__animation.setDuration(500)
+        elif type == 'dynamic':
+            self.setStyleSheet('')
+            self.__animation.setEasingCurve(QEasingCurve.InOutQuad)
+            self.__animation.setDuration(1000)
