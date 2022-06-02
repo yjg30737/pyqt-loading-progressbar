@@ -21,12 +21,10 @@ class LoadingProgressBar(QProgressBar):
     def __loading(self, v):
         self.setValue(v)
         if self.__animation.currentValue() == self.__animation.endValue():
-            self.__animation.stop()
             self.__animation.setDirection(QAbstractAnimation.Backward)
             self.setInvertedAppearance(True)
             self.__animation.start()
         elif self.__animation.currentValue() == self.__animation.startValue():
-            self.__animation.stop()
             self.__animation.setDirection(QAbstractAnimation.Forward)
             self.setInvertedAppearance(False)
             self.__animation.start()
