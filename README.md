@@ -1,5 +1,5 @@
 # pyqt-loading-progressbar
-PyQt progress bar used for loading
+PyQt animated progress bar used for loading
 
 ## Requirements
 * PyQt5 >= 5.8
